@@ -41,7 +41,7 @@
     pixi shell
     ```
 
-    Install Isaac Lab.
+    Install Isaac Lab. Isaac Lab should have been downloaded as a submodule with `git clone --recursive`. If not, run `git submodule update --init --recursive` before running the following command.
     ```
     ./install_isaaclab.sh
     ```

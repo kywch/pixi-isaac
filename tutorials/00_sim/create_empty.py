@@ -4,21 +4,20 @@ import argparse
 
 from omni.isaac.lab.app import AppLauncher
 
+"""Launch Isaac Sim Simulator first."""
+# create argparser
+parser = argparse.ArgumentParser(description="Tutorial on creating an empty stage.")
+# append AppLauncher cli args
+AppLauncher.add_app_launcher_args(parser)
+# parse the arguments
+args_cli = parser.parse_args()
+# launch omniverse app
+app_launcher = AppLauncher(args_cli)
+simulation_app = app_launcher.app
+
 
 if __name__ == "__main__":
-    """Launch Isaac Sim Simulator first."""
-    # create argparser
-    parser = argparse.ArgumentParser(description="Tutorial on creating an empty stage.")
-    # append AppLauncher cli args
-    AppLauncher.add_app_launcher_args(parser)
-    # parse the arguments
-    args_cli = parser.parse_args()
-    # launch omniverse app
-    app_launcher = AppLauncher(args_cli)
-    simulation_app = app_launcher.app
-
     """Rest everything follows."""
-
     from omni.isaac.lab.sim import SimulationCfg, SimulationContext
 
     # Initialize the simulation context
